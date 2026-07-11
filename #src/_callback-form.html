@@ -1,0 +1,62 @@
+<!--callback-form-->
+<section class="section callback-form" data-animation="fadeUp">
+    <div class="container">
+        <div class="callback-form__inner">
+            <div class="callback-form__info">
+                @@if (firstOrder === false) {
+                   <h2>Заполните форму, и&nbsp;мы перезвоним вам.</h2> 
+                }
+                @@if (firstOrder === true) {
+                    <h2>Получите скидку на&nbsp;первый заказ</h2> 
+                 }
+                @@if(contacts === true) {
+                <div class="callback-form__contacts">
+                    <div class="page-contact phone">
+                        <a href="tel:88001004407">8 800 100-44-07</a>
+                        <span>Бесплатно по России (8:00&nbsp;–&nbsp;20:00)</span>
+                    </div>
+                    <div class="page-contact mail">
+                        <a href="mailto:info@leskraft.ru">info@leskraft.ru</a>
+                    </div>
+                </div>
+                }
+                @@if(contacts === false && firstOrder === false) {
+                <p>Не ждите! Заполните форму, и мы оперативно свяжемся с вами</p>
+                }
+                @@if(contacts === false && firstOrder === true) {
+                    <p>Пока вы готовитесь сделать первый заказ, мы&nbsp;уже&nbsp;подготовили скидку на&nbsp;него. Заполните&nbsp;форму, и&nbsp;мы&nbsp;пришлём промокод вам&nbsp;на&nbsp;почту</p>
+                    }
+            </div>
+            <form class="form disabled-form" onsubmit="event.preventDefault();formReset(this);openSuccessMod()">
+                <div class="form__grid">
+                    <div class="item-form">
+                        <div class="item-form__inp">
+                            <input type="text" placeholder=" " class="required">
+                            <div class="item-form__placeholder">Ваше имя</div>
+                            <button type="button" class="btn-cross item-form__reset" aria-label="Очистить поле"></button>
+                        </div>
+                        <span data-error></span>
+                    </div>
+                    <div class="item-form">
+                        <div class="item-form__inp">
+                            <input type="tel" placeholder=" " class="required">
+                            <div class="item-form__placeholder">Телефон</div>
+                            <button type="button" class="btn-cross item-form__reset" aria-label="Очистить поле"></button>
+                        </div>
+                        <span data-error></span>
+                    </div>
+                </div>
+                <div class="form__footer">
+                    <label class="item-checkbox">
+                        <input type="checkbox" checked class="required">
+                        <span>Я соглашаюсь с <a href="#" target="_blank">Политикой обработки персональных данных</a></span>
+                    </label>
+                    <button type="submit" class="btn main-btn main-btn--link">
+                        Отправить
+                        <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

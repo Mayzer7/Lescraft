@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    @@include('_head.html', {
+    "title": "Результаты поиска"
+    })
+
+    <body>
+        <div class="wrap">
+            @@include('_header.html', {"main": false, "search": false})
+            <!--main-->
+            <main class="main">
+                @@include('_preloader.html")
+                <!--page-top-->
+                <div class="page-top">
+                    <div class="container">
+                        @@include('_breadcrumbs.html', {"page": "Результаты поиска"})
+                    </div>
+                </div>
+                <!--search-p-->
+                <section class="section search-p">
+                    <div class="container">
+                        <div class="sec-top">
+                            <h1>Результаты поиска</h1>
+                        </div>
+                        <div class="search-noresult">
+                            <div class="search-noresult__img">
+                                <img src="img/svg/search-noresult.svg" alt>
+                            </div>
+                            <div class="search-noresult__content">
+                                <h3>По вашему запросу ничего не найдено</h3>
+                                <p>Проверьте правильность ввода или попробуйте изменить запрос.</p>
+                                <a href="#" class="btn main-btn main-btn--link">
+                                    Перейти в каталог
+                                    <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('_other-cat.html', {"title": "Вы недавно смотрели", "btn": false})
+            </main>
+            @@include('_footer.html', {"main": false})
+            @@include('_modal.html')
+        </div>
+        @@include('_js.html')
+    </body>
+
+</html>

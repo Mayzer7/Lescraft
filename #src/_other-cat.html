@@ -1,0 +1,38 @@
+<!--other-cat-->
+<section class="section swiper5 other-cat" data-animation="fadeUp">
+    <div class="container">
+        <div class="sec-top">
+            <h2 class="h1">@@title</h2>
+            @@if(btn === true) {
+            <a href="#" class="btn stroke-btn stroke-btn--link">
+                <span class="mobile-hidden">Смотреть&nbsp;</span>
+                <span>все</span>
+                <span class="link-icon"></span>
+            </a>
+            }
+        </div>
+        <div class="swiper js-prodWrapper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "1", "inStock": true})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "2", "inStock": false})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "5", "inStock": true})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "4", "inStock": true})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "5", "inStock": false})
+                </div>
+                <div class="swiper-slide">
+                    @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "1", "inStock": true})
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>

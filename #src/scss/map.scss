@@ -1,0 +1,176 @@
+.map {
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    [class*="copyrights-pane"] {
+        display: none !important;
+    }
+    [class*="ground-pane"] {
+        filter: grayscale(0.8);
+    }
+    @media (max-width: $bp1) {
+        border-radius: 16px;
+    }
+}
+[class*="-balloon_layout"] {
+    width: 463px;
+    padding: 0 !important;
+    border-radius: 20px;
+    border: 1px solid var(--border-color-green);
+    overflow: hidden;
+    box-shadow: 0px 0px 18px 0px #717d7533 !important;
+    animation: balloon-fadeUp 0.35s;
+    @media (max-width: $bp1) {
+        width: 400px;
+    }
+}
+[class*="-balloon__layout"] {
+    background: var(--green-color-light) !important;
+}
+[class*="balloon__content"] {
+    padding: 24px 0 32px 32px !important;
+    font-family: "Helvetica-Neue", sans-serif !important;
+    background: var(--green-color-light) !important;
+    @media (max-width: $bp1) {
+        padding: 20px 0 20px 24px !important;
+    }
+}
+[class*="-balloon__tail"] {
+    display: none !important;
+}
+[class*="balloon__close"] {
+    top: 5px;
+    right: 5px;
+}
+[class*="balloon__close-button"] {
+    opacity: 1 !important;
+    transform: scale(0.9);
+}
+[class*="__control"] {
+    display: none !important;
+}
+@keyframes balloon-fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#showrooms-map,
+.showrooms-modal {
+    .balloon__header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 12px;
+        &::before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 32px;
+            background: url(../img/svg/map-marker.svg) center/contain no-repeat;
+            margin-right: 8px;
+        }
+    }
+    .balloon__body {
+        padding-left: 40px;
+    }
+    @media (max-width: $bp1) {
+        .balloon__header {
+            margin-bottom: 8px;
+            &:before {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        .balloon__body {
+            padding-left: 36px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .item-contact {
+            a:first-child,
+            span:first-child {
+                font-size: 12px;
+            }
+        }
+    }
+}
+#showrooms-map {
+    @media (max-width: $bp3) {
+        [class*="-balloon"] {
+            display: none !important;
+        }
+    }
+}
+.address-map {
+    position: relative;
+    .map {
+        height: 264px;
+    }
+    [class*="-events-pane"] {
+        cursor: auto !important;
+    }
+    [class*="-balloon"] {
+        display: none !important;
+    }
+    &__marker {
+        width: 32px;
+        height: 32px;
+        background: url(../img/svg/map-marker-loc.svg) center/contain no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        &.undefined {
+            background-image: url(../img/svg/map-marker-loc-error.svg);
+        }
+    }
+    @media (min-width: $bp3) {
+        &__bottom {
+            display: none;
+        }
+    }
+    @media (max-width: $bp1) {
+        .map {
+            height: 235px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .map {
+            height: 100%;
+            border-radius: 0;
+        }
+        .add-info {
+            margin-top: 12px;
+            &.hidden {
+                display: none;
+            }
+        }
+        .main-btn {
+            width: 100%;
+            margin-top: 24px;
+        }
+        &__map-wrapper {
+            flex: 1 1 auto;
+            overflow: hidden;
+        }
+        &__bottom {
+            padding-left: calc((100% - var(--content-width)) / 2);
+            padding-right: calc((100% - var(--content-width)) / 2);
+        }
+        &__address {
+            margin-top: 8px;
+        }
+    }
+    @media (max-width: 575.98px) {
+        &__bottom {
+            padding-left: calc(var(--container-offset) - 4px);
+            padding-right: calc(var(--container-offset) - 4px);
+        }
+    }
+}

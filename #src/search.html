@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    @@include('_head.html', {
+    "title": "Результаты поиска"
+    })
+
+    <body>
+        <div class="wrap">
+            @@include('_header.html', {"main": false, "search": true})
+            <!--main-->
+            <main class="main">
+                @@include('_preloader.html")
+                <!--page-top-->
+                <div class="page-top">
+                    <div class="container">
+                        @@include('_breadcrumbs.html', {"page": "Результаты поиска"})
+                    </div>
+                </div>
+                <!--search-p-->
+                <section class="section catalog search-p">
+                    <div class="container">
+                        <div class="sec-top">
+                            <h1 class="text-l">Результаты поиска</h1>
+                            <p><b>Результаты по запросу «Евровагонка»</b></p>
+                        </div>
+                        <div class="catalog-top">
+                            <div class="catalog-top__action">
+                                <div class="dropdown radio-select">
+                                    <div class="dropdown__header">
+                                        <span class="mob-hidden">По умолчанию</span>
+                                        <div class="dropdown__icon" aria-label="Развернуть/Свернуть">
+                                            <svg class="mob-hidden"><use xlink:href="img/svg/sprite.svg#chevron-bot"></use></svg>
+                                            <svg class="desktop-hidden"><use xlink:href="img/svg/sprite.svg#sort"></use></svg>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown__body">
+                                        <div class="modal">
+                                            <div class="modal__content">
+                                                <button type="button" class="btn-cross modal__close"></button>
+                                                <div class="modal__top">
+                                                    <h3>Сортировать</h3>
+                                                </div>
+                                                <div class="custom-scroll modal__scroll">
+                                                    <div class="dropdown__options">
+                                                        <label>
+                                                            <input type="radio" name="f-sort" checked>
+                                                            <span>По умолчанию</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="f-sort">
+                                                            <span>По возрастанию цены</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="f-sort">
+                                                            <span>По убыванию цены</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="f-sort">
+                                                            <span>По названию (А-Я)</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="f-sort">
+                                                            <span>По названию (Я-А)</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-top__view-btns">
+                                <button class="catalog-top__view-btn active" data-view="grid" aria-label="Отобразить в виде сетки">
+                                    <svg><use xlink:href="img/svg/sprite.svg#grid"></use></svg>
+                                </button>
+                                <button class="catalog-top__view-btn" data-view="tile" aria-label="Отобразить в виде плитки">
+                                    <svg><use xlink:href="img/svg/sprite.svg#tile"></use></svg>
+                                </button>
+                                <button class="catalog-top__view-btn" data-view="list" aria-label="Отобразить в виде списка">
+                                    <svg><use xlink:href="img/svg/sprite.svg#list"></use></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="js-prodWrapper">
+                            <div class="catalog__items">
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "1", "inStock": true})
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "2", "inStock": true})
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "3", "inStock": false})
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "4", "inStock": false})
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "5", "inStock": true})
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "2", "inStock": true})
+                                @@include("_card.html", {"fav": false, "hasPhoto": true, "nmb": "4", "inStock": false})
+                            </div>
+                            @@include("_pagination.html")
+                        </div>
+                    </div>
+                </section>
+                @@include('_other-cat.html', {"title": "Вы недавно смотрели", "btn": false})
+            </main>
+            @@include('_footer.html', {"main": false})
+            @@include('_modal.html')
+        </div>
+        @@include('_js.html')
+    </body>
+
+</html>

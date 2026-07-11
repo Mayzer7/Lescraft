@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    @@include('_head.html', {
+    "title": "Корзина"
+    })
+
+    <body>
+        <div class="wrap">
+            @@include('_header.html', {"main": false, "search": false})
+            <!--main-->
+            <main class="main">
+                @@include('_preloader.html")
+                <!--page-top-->
+                <div class="page-top">
+                    <div class="container">
+                        @@include('_breadcrumbs.html', {"page": "Корзина"})
+                    </div>
+                </div>
+                <section class="section cart-p">
+                    <div class="container">
+                        <div class="sec-top">
+                            <h1>Ваша корзина</h1>
+                        </div>
+                        <div class="profile-noLogged">
+                            <p><b>Есть аккаунт? Авторизуйтесь!</b></p>
+                            <button class="btn main-btn main-btn--link mod-open-btn" data-modal="log-modal">
+                                Войти
+                                <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                            </button>
+                        </div>
+                        <form class="cart-p__form">
+                            <div class="cart-p__top">
+                                <label class="item-checkbox">
+                                    <input type="checkbox" checked class="cart-p__inStock-allChek">
+                                    <span>Выбрать все</span>
+                                </label>
+                                <button type="button" class="btn text-btn cart-p__checked-remove cart-clear-btn" data-cart-type="in-stock">Удалить выбранные</button>
+                                <button type="button" class="btn text-btn cart-p__all-remove cart-clear-btn" data-cart-type="in-stock">
+                                    Очистить корзину
+                                    <svg><use xlink:href="img/svg/sprite.svg#bin"></use></svg>
+                                </button>
+                            </div>
+                            <div class="page-row">
+                                <!--page-row__content-->
+                                <div class="page-row__content">
+                                    <div class="js-prodWrapper cart-p__sec">
+                                        <div class="cart-p__items">
+                                            @@include("_item-cart.html", {"isFav": false, "inStock": true})
+                                            @@include("_item-cart.html", {"isFav": true, "inStock": true})
+                                        </div>
+                                    </div>
+                                    <section class="js-prodWrapper cart-p__sec" data-animation="fadeUp">
+                                        <div class="sec-top">
+                                            <h3>Недоступные товары</h3>
+                                            <button type="button" class="btn text-btn cart-clear-btn" data-cart-type="out-of-stock">Удалить все</button>
+                                        </div>
+                                        <div class="cart-p__items">
+                                            @@include("_item-cart.html", {"isFav": false, "inStock": false})
+                                        </div>
+                                    </section>
+                                </div>
+                                <!--page-row__aside-->
+                                <aside class="page-row__aside">
+                                    <div class="total-cart">
+                                        <dl class="prod-details">
+                                            <div class="prod-details__item">
+                                                <dt>Скидка</dt>
+                                                <dd class="rub">2 499,78</dd>
+                                            </div>
+                                        </dl>
+                                        <div class="total-cart__footer">
+                                            <div class="total-cart__price-wrapper">
+                                                <span class="total-cart__price-lbl">Итого</span>
+                                                <div class="total-cart__price-total">
+                                                    <span class="h4 rub">3 532,74</span>
+                                                </div>
+                                                <span class="total-cart__price-info">в том числе НДС: 580 ₽</span>
+                                            </div>
+                                            <a href="#" class="btn main-btn main-btn--link total-cart__submit">
+                                                Перейти к оформлению
+                                                <svg><use xlink:href="img/svg/sprite.svg#link"></use></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                @@include('_other-cat.html', {"title": "Вы недавно смотрели", "btn": false})
+            </main>
+            @@include('_footer.html', {"main": false})
+            @@include('_modal.html')
+        </div>
+        @@include('_js.html')
+    </body>
+
+</html>
